@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="armor" x2="0.8" y2="1">
+      <stop stop-color="#ffcf74"/>
+      <stop offset=".52" stop-color="#ed684f"/>
+      <stop offset="1" stop-color="#8f3153"/>
+    </linearGradient>
+    <linearGradient id="face" x2="0" y2="1">
+      <stop stop-color="#34253e"/>
+      <stop offset="1" stop-color="#141d2a"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="5" stdDeviation="3" flood-color="#080b14" flood-opacity=".65"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" stroke="#54223c" stroke-linejoin="round" stroke-width="4">
+    <path d="m27 48-15-13 5 31-10 14 26 3zm74 0 15-13-5 31 10 14-26 3z" fill="#ffc76d"/>
+    <path d="M25 51q1-27 39-30 38 3 39 30l-5 42-18 17H48L30 93z" fill="url(#armor)"/>
+    <path d="m31 53 15-15 18 11 18-11 15 15-5 31-14 16H50L36 84z" fill="url(#face)"/>
+    <path d="M40 61h14m20 0h14" stroke="#88f5ff" stroke-linecap="round" stroke-width="8"/>
+    <path d="m50 82 14 9 14-9" fill="none" stroke="#ffb772" stroke-linecap="round" stroke-width="5"/>
+    <path d="m43 100-4 18m46-18 4 18" fill="none" stroke="#f4a975" stroke-linecap="round" stroke-width="10"/>
+    <path d="m34 70-12 9m72-9 12 9" fill="none" stroke="#ffd476" stroke-linecap="round" stroke-width="8"/>
+    <path d="m64 9 8 11-8 9-8-9z" fill="#9cf9ff"/>
+  </g>
+</svg>

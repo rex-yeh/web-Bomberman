@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 100">
+  <defs>
+    <linearGradient id="beast" x1="0" x2="1" y2="1">
+      <stop stop-color="#f8cf78"/>
+      <stop offset=".55" stop-color="#d28b46"/>
+      <stop offset="1" stop-color="#86512e"/>
+    </linearGradient>
+    <linearGradient id="shell" x1="0" x2="1" y2="1">
+      <stop stop-color="#efffcf"/>
+      <stop offset=".48" stop-color="#b4e56c"/>
+      <stop offset="1" stop-color="#6b9d38"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="4" stdDeviation="3" flood-color="#080f0a" flood-opacity=".5"/>
+    </filter>
+  </defs>
+  <g filter="url(#shadow)" stroke="#62422b" stroke-linejoin="round" stroke-width="3">
+    <path d="m36 63-8 17m43-16 7 16m-34-17-2 17m48-19 4 17" fill="none" stroke="#f4cf8a" stroke-linecap="round" stroke-width="8"/>
+    <path d="M18 57c2-17 18-27 43-25 21 2 34 13 39 25l-8 13-65 1-13-7z" fill="url(#beast)"/>
+    <path d="M89 47c2-11 9-19 18-17l5 8-7 11 6 8-10 5-11-7z" fill="url(#beast)"/>
+    <path d="M98 41h4m-20-7 7-11 5 13" fill="#ffe1a2"/>
+    <path d="M28 52c10-9 24-12 40-8" fill="none" stroke="#ffe0a2" stroke-linecap="round" stroke-width="4"/>
+    <path d="M51 40c0-12 8-20 19-20s19 8 19 20v17H51z" fill="url(#shell)"/>
+    <path d="M56 39c0-7 6-12 14-12s14 5 14 12v8H56z" fill="#254138" stroke="#d7f795"/>
+    <path d="M62 39h3m8 0h3" stroke="#c6ff8c" stroke-linecap="round" stroke-width="4"/>
+    <circle cx="102" cy="43" r="2" fill="#392c23"/>
+    <path d="M17 51 9 43m3 2 10 5" fill="none" stroke="#edb86e" stroke-linecap="round" stroke-width="4"/>
+  </g>
+</svg>

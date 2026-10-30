@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#111916" />
+    <title>爆區！— 機器人競技場</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <a class="brand" href="#" aria-label="爆區首頁">
+          <span class="brand-mark" aria-hidden="true">✹</span>
+          <span>爆區<span class="brand-en">BLAST ZONE</span></span>
+        </a>
+        <div class="topbar-right">
+          <span class="mode-pill"><span class="status-dot"></span> 第 <strong id="level-number">01</strong> 關 <span class="level-total">/ 99</span></span>
+          <button class="icon-button" id="help-button" aria-label="遊戲說明">?</button>
+        </div>
+      </header>
+
+      <section class="intro">
+        <div class="eyebrow" id="level-caption">機器人競技場 · 第 01 / 99 關</div>
+        <h1>放下炸彈，<span>活著離開。</span></h1>
+        <p>探索大型主題地圖、擊敗每十關的區域首領，帶著強化找到出口。</p>
+      </section>
+
+      <section class="game-layout" aria-label="生存遊戲">
+        <div class="arena-panel panel">
+          <div class="panel-heading">
+            <div>
+              <span class="section-label">本關進度</span>
+              <h2><span class="live-dot"></span> <span id="arena-title">深海遺跡競技場</span></h2>
+            </div>
+            <div class="enemy-progress" id="enemy-progress">追兵 3</div>
+          </div>
+          <div class="stats-bar">
+            <div class="stat"><span class="stat-label">生命</span><span id="lives" class="hearts" aria-label="3 條生命">♥ ♥ ♥</span></div>
+            <div class="stat"><span class="stat-label">分數</span><strong id="score">0000</strong></div>
+            <div class="stat"><span class="stat-label">升級</span><strong id="upgrades">0</strong></div>
+            <div class="stat"><span class="stat-label">擊退</span><strong id="kills">0</strong></div>
+          </div>
+          <div class="board-frame">
+            <div class="board" id="board" role="grid" aria-label="機器人炸彈競技場"></div>
+          </div>
+          <div class="board-legend">
+            <span><i class="legend-swatch player-swatch">●</i>你</span>
+            <span><i class="legend-swatch crate-swatch"></i>可炸障礙</span>
+            <span><i class="legend-swatch enemy-swatch">◆</i>追兵／首領</span>
+            <span><i class="legend-swatch power-swatch">✦</i>道具</span>
+          </div>
+        </div>
+
+        <aside class="control-panel panel">
+          <div class="panel-heading control-heading">
+            <div>
+              <span class="section-label">操作面板</span>
+              <h2>準備迎戰</h2>
+            </div>
+            <span class="bomb-stock" id="bomb-stock" aria-label="炸彈與護盾存量">
+              <span class="resource-icon" aria-hidden="true">●</span><span id="bombs-available">2 / 2</span>
+              <span class="resource-divider" aria-hidden="true"></span>
+              <span class="shield-icon" aria-hidden="true">⬡</span><span id="shield-count">0</span>
+            </span>
+          </div>
+
+          <div class="status-message" id="status-message" role="status" aria-live="polite">
+            <span class="status-icon">✳</span>
+            <span>擊退所有追兵，前往出口通關！</span>
+          </div>
+
+          <div class="play-area">
+            <div class="dpad-wrap" aria-label="移動方向">
+              <div class="dpad">
+                <button class="dpad-button up" data-direction="up" aria-label="向上移動">▲</button>
+                <button class="dpad-button left" data-direction="left" aria-label="向左移動">◀</button>
+                <button class="dpad-button down" data-direction="down" aria-label="向下移動">▼</button>
+                <button class="dpad-button right" data-direction="right" aria-label="向右移動">▶</button>
+                <span class="dpad-center" aria-hidden="true">✦</span>
+              </div>
+              <span class="control-caption">移動</span>
+            </div>
+            <div class="action-wrap">
+              <button class="bomb-button" id="bomb-button" aria-label="放置炸彈">
+                <img class="bomb-emoji" src="assets/bomb.svg" alt="" aria-hidden="true" />
+                <span>放炸彈</span>
+              </button>
+              <span class="control-caption" id="bomb-caption">放置後再按可投擲</span>
+              <div class="mount-actions" id="mount-actions" hidden>
+                <button class="mount-action" id="jump-button" aria-label="騎乘跳躍">↟ 跳躍</button>
+                <button class="mount-action" id="switch-mount-button" aria-label="切換坐騎">換騎</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="tips-card">
+            <span class="tips-icon">✦</span>
+            <p><strong id="tip-title">關卡目標</strong><br /><span id="level-tip">擊退場上所有追兵，出口開啟後進入出口前往下一關。拾取炸彈會立即裝備。</span></p>
+          </div>
+
+          <div class="control-actions">
+            <button class="secondary-button" id="restart-button">↻ <span>重新開始</span></button>
+            <button class="remote-button" id="remote-button" hidden>引爆遙控炸彈</button>
+            <span class="keyboard-hint">鍵盤：<kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> 移動 · <kbd>空白鍵</kbd> 放置／投擲 · <kbd>X</kbd> 跳躍 · <kbd>C</kbd> 換騎</span>
+          </div>
+        </aside>
+      </section>
+
+      <footer class="footer">
+        <span>原創街機生存遊戲 · 小心爆風，保持移動。</span>
+        <span>BLAST ZONE © 2026</span>
+      </footer>
+    </main>
+
+    <dialog id="help-dialog">
+      <div class="dialog-content">
+        <button class="dialog-close" id="close-help" aria-label="關閉">×</button>
+        <span class="section-label">競技場守則</span>
+        <h2>闖過 99 道競技場！</h2>
+        <p>擊退本關追兵、擊敗每十關出現的區域首領，出口開啟後走進出口即可前往下一關，最多 99 關。每十關會切換一種地形風格與炸彈特性；地圖比原先更大。</p>
+        <p>擊退所有追兵後出口開啟，走到出口進入下一關。跳躍型坐騎能跳過障礙；投擲型坐騎可在放置炸彈後再次按炸彈按鈕，把它沿面向方向投出並越過木箱；坐騎都能抵擋一次炸彈爆風，護盾型還能抵擋一次敵人碰撞。坐騎可用「換騎」切換。炸彈種類由拾取的道具決定，死亡會隨機掉落一項已收集的強化道具。</p>
+        <button class="run-button dialog-ok" id="help-ok">出發！</button>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="game.js"></script>
+  </body>
+</html>
